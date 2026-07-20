@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "skipped": true,
+  "issues": [],
+  "evidence": {
+    "reason": "Chromium local HTTP navigation blocked by execution-environment policy."
+  },
+  "method": "Attempts Chromium against real local HTTP files; the environment may block localhost navigation. Inlined production-browser tests remain the functional browser source of truth when skipped."
+}
