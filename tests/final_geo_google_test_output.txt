@@ -1,0 +1,164 @@
+=== JavaScript syntax ===
+JS_SYNTAX_FAIL=0
+=== Geo / OTP / public navigation ===
+ALL_GEO_OTP_GOOGLE_QA_PASSED
+=== Google server proxy ===
+ALL_GOOGLE_PLACES_PROXY_QA_PASSED
+=== Google browser client ===
+{
+  "passed": true,
+  "issues": [],
+  "evidence": {
+    "calls": {
+      "ok": 1,
+      "fail": 1
+    },
+    "details": {
+      "first": {
+        "placeId": "ChIJCACHEPLACE123",
+        "displayName": "ورشة مرتبطة",
+        "rating": 4.7,
+        "userRatingCount": 214,
+        "googleMapsUri": "https://maps.google.com/?cid=987",
+        "formattedAddress": "الرياض، السعودية",
+        "businessStatus": "OPERATIONAL",
+        "fetchedAt": "2026-07-21T00:00:00.000Z"
+      },
+      "second": {
+        "placeId": "ChIJCACHEPLACE123",
+        "displayName": "ورشة مرتبطة",
+        "rating": 4.7,
+        "userRatingCount": 214,
+        "googleMapsUri": "https://maps.google.com/?cid=987",
+        "formattedAddress": "الرياض، السعودية",
+        "businessStatus": "OPERATIONAL",
+        "fetchedAt": "2026-07-21T00:00:00.000Z"
+      },
+      "readyStatus": "ready",
+      "readyText": "Google Maps4.7 / 5بناءً على ٢١٤ مراجعةعرض على Google Maps",
+      "failedStatus": "error",
+      "failedText": "Google Mapsتعذر تحديث التقييم الآنتكامل Google غير متاح مؤقتًافتح الخريطة"
+    }
+  },
+  "method": "Production Google Places client executed in Chromium with a mocked same-origin API contract; verifies in-memory cache, separate rendering, and non-blocking fallback."
+}
+=== Core lifecycle ===
+✓ النطاق التشغيلي مقصور على مسار مشكلة السيارة
+✓ بيانات الاختبار تشمل ورش المرحلة الأولى فقط وتدعم الدفعات البديلة
+✓ التحليل يطرح صفرًا إلى ثلاثة أسئلة ويوقف الأسئلة عند مؤشرات الخطر
+✓ الموافقة إلزامية ورقم الطلب وفئة الرسم من 1 إلى 5 محفوظان
+✓ الطلب يرسل إلى ثلاث ورش فريدة دون بيانات شخصية أو رسم مسبق
+✓ أول قبول يكشف البيانات ويغلق الدفعة ويحتسب الرسم مرة واحدة فقط
+✓ البديل خلال 24 ساعة يحتفظ بالطلب ويرسل إلى ثلاث ورش جديدة
+✓ طلب البديل يتوقف بعد انتهاء مهلة 24 ساعة
+✓ الحد الأقصى ثلاث إحالات مقبولة للحالة نفسها
+✓ التقييم مرتبط بإحالة مقبولة ومُعقّم وغير مكرر
+✓ تسجيل فتح الإرسال اليدوي عبر واتساب
+✓ سلامة العلاقات بين العملاء والسيارات والطلبات والإحالات والرسوم والتقييمات
+
+ALL_UNIT_QA_PASSED
+=== Admin permissions ===
+✓ إضافة جدول مستخدمي الإدارة إلى نموذج البيانات
+✓ إضافة جدول جلسات الإدارة إلى نموذج البيانات
+✓ إضافة جدول سجل التدقيق إلى نموذج البيانات
+✓ تجهيز ستة أدوار داخلية مستقلة
+✓ عدم تكرار الأدوار في الحسابات الأولية
+✓ تسجيل دخول مدير النظام بكلمة المرور المشفرة
+✓ مدير النظام يملك جميع الصلاحيات
+✓ خدمة العملاء تستطيع إدارة الطلبات
+✓ خدمة العملاء لا تستطيع إدارة الحسابات
+✓ المحاسب يستطيع إدارة الحسابات
+✓ المحاسب لا يستطيع تغيير الطلبات
+✓ استعادة جلسة الإدارة النشطة
+✓ تسجيل الدخول في سجل التدقيق
+✓ إنهاء جلسة الإدارة عند تسجيل الخروج
+✓ عدم إظهار روابط بوابة الإدارة في الصفحات العامة
+✓ ربط صفحة الدخول بمنطق المصادقة الداخلي
+✓ ربط لوحة الإدارة بالتبويبات وسجل التدقيق
+✓ سلامة علاقات مستخدمي وجلسات الإدارة
+
+ALL_ADMIN_QA_PASSED
+=== Static audit ===
+{
+  "metrics": {
+    "html_files": 15,
+    "links": 205,
+    "scripts": 120,
+    "controls": 69
+  },
+  "issues": []
+}
+=== Stage-one static audit ===
+{
+  "pages": 15,
+  "passed": false,
+  "issues": [
+    "payment.html: not marked as future",
+    "receipt.html: not marked as future",
+    "workshop-dashboard.html: not marked as future",
+    "workshop-login.html: not marked as future"
+  ]
+}
+=== Full customer/join browser flow ===
+{
+  "passed": true,
+  "issues": [],
+  "evidence": {
+    "active": "result",
+    "requests": 1,
+    "referrals": 3,
+    "fees": 0,
+    "referralStatuses": [
+      "sent",
+      "sent",
+      "sent"
+    ],
+    "questionCount": 0,
+    "privateLink": "https://example.test/track.html?token=req_c2bf8288e46ebcd95647abbcc8216a1a",
+    "region": "منطقة القصيم",
+    "city": "بريدة",
+    "verified": true,
+    "verifiedAt": "2026-07-20T22:49:18.359Z",
+    "phone": "0551234568",
+    "locationMethod": "manual",
+    "header": true,
+    "footer": true,
+    "autoLocation": {
+      "region": "منطقة الرياض",
+      "city": "الرياض",
+      "method": "تم اختيار الرياض في منطقة الرياض تلقائيًا. يمكنك تعديله يدويًا."
+    },
+    "otp": {
+      "first": {
+        "shown": true,
+        "code": "076305",
+        "phone": ""
+      },
+      "second": {
+        "shown": true,
+        "code": "719126",
+        "status": "تم إنشاء الرمز وكتابته تلقائيًا للاختبار. اضغط تحقق من الرمز."
+      }
+    },
+    "join": {
+      "applications": 1,
+      "partnerType": "workshop",
+      "placeId": "ChIJTESTPLACE123",
+      "success": true
+    },
+    "locationDenied": {
+      "status": "لم تمنح إذن الموقع. اختر المنطقة والمدينة يدويًا.",
+      "regionDisabled": false,
+      "cityDisabled": true
+    }
+  },
+  "method": "Playwright executes production customer and join HTML with production JavaScript inlined on a 390x844 mobile viewport, including mocked browser geolocation."
+}
+=== Responsive viewport audit ===
+{
+  "checks": 75,
+  "passed": true,
+  "issue_count": 0,
+  "issues": []
+}
+=== CSS braces ===
