@@ -1,0 +1,47 @@
+# الملفات المعدلة والجديدة
+
+مقارنةً بالحزمة المرفقة الأصلية:
+
+- MODIFIED: `404.html`
+- MODIFIED: `admin-dashboard.html`
+- MODIFIED: `admin-login.html`
+- MODIFIED: `assets/admin-dashboard.js`
+- MODIFIED: `assets/automotive-data.js`
+- MODIFIED: `assets/common.js`
+- MODIFIED: `assets/config.js`
+- MODIFIED: `assets/customer.js`
+- NEW: `assets/google-places.js`
+- MODIFIED: `assets/join.js`
+- MODIFIED: `assets/lifecycle.js`
+- NEW: `assets/otp.js`
+- MODIFIED: `assets/seed.js`
+- MODIFIED: `assets/storage.js`
+- MODIFIED: `assets/styles.css`
+- MODIFIED: `assets/track.js`
+- MODIFIED: `customer.html`
+- MODIFIED: `index.html`
+- MODIFIED: `join-status.html`
+- MODIFIED: `join.html`
+- MODIFIED: `netlify.toml`
+- NEW: `netlify/functions/google-place-details.js`
+- MODIFIED: `payment.html`
+- MODIFIED: `privacy.html`
+- MODIFIED: `receipt.html`
+- MODIFIED: `terms.html`
+- NEW: `tests/geo_otp_google_qa.js`
+- NEW: `tests/google_places_proxy_qa.js`
+- MODIFIED: `tests/qa-unit.js`
+- MODIFIED: `track.html`
+- MODIFIED: `workshop-accept.html`
+- MODIFIED: `workshop-dashboard.html`
+- MODIFIED: `workshop-login.html`
+
+## ملفات التوثيق والتسليم
+- `README.md`
+- `CHANGE_REPORT.md`
+- `PAGE_INVENTORY.md`
+- `QA_MATRIX.md`
+- `TEST_REPORT.md`
+- `FULL_MODIFIED_SOURCE.md`
+- `SOURCE_CODE.md`
+- `MANIFEST.sha256`
